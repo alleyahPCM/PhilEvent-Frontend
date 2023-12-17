@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useRef, useEffect }from 'react'
 import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
 
@@ -32,6 +33,17 @@ const events = [
 ];
 
 const EventCalendar = () => {
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    const content = contentRef.current;
+    if (content.scrollHeight <= content.clientHeight) {
+      content.style.overflowY = 'hidden';
+    } else {
+      content.style.overflowY = 'scroll';
+    }
+  }, []);
+
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   const handleSelectEvent = (event) => {
@@ -45,42 +57,44 @@ const EventCalendar = () => {
   return (
     <Container>
         <Title>Calendar</Title>
-        <div style={{ height: '800px', padding: '20px' }}>
-      <Calendar
-        localizer={localizer}
-        events={events}
-        startAccessor="start"
-        endAccessor="end"
-        views={['month']}
-        defaultDate={new Date(2023, 11, 1)}
-        style={{ maxHeight: '100%', width: '100%' }}
-        components={{
-          month: {
-            event: ({ event }) => (
-              <div>
-                <strong>{event.title}</strong>
-              </div>
-            ),
-          },
-        }}
-        onSelectEvent={handleSelectEvent}
-      />
+        <div ref={contentRef} style={{overflow: 'hidden', overflowY: 'scroll', height: 'calc(100vh - 150px)'}}>
+          <div style={{ height: '800px', padding: '20px' }}>
+            <Calendar
+              localizer={localizer}
+              events={events}
+              startAccessor="start"
+              endAccessor="end"
+              views={['month']}
+              defaultDate={new Date(2023, 11, 1)}
+              style={{ maxHeight: '100%', width: '100%' }}
+              components={{
+                month: {
+                  event: ({ event }) => (
+                    <div>
+                      <strong>{event.title}</strong>
+                    </div>
+                  ),
+                },
+              }}
+              onSelectEvent={handleSelectEvent}
+            />
 
-      <Modal show={selectedEvent !== null} onHide={handleCloseModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>{selectedEvent?.title}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p>{selectedEvent?.description}</p>
-          {/* Display other event details as needed */}
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseModal}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </div>
+            <Modal show={selectedEvent !== null} onHide={handleCloseModal}>
+              <Modal.Header closeButton>
+                <Modal.Title>{selectedEvent?.title}</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <p>{selectedEvent?.description}</p>
+                {/* Display other event details as needed */}
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleCloseModal}>
+                  Close
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </div>
+        </div>
     </Container>
   )
 }

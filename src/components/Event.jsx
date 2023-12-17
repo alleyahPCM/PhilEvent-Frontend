@@ -93,7 +93,6 @@ const Event = ({item}) => {
                     <span>{item.date}</span><span> | </span>
                     <span>{item.time}</span> <br/>
                     <span>{item.location}</span> <br/>
-                    <span style={{color: '#DA7422'}}>{item.price}</span>
                 </Card.Text>
             </Card.Body>
         </EventCard>

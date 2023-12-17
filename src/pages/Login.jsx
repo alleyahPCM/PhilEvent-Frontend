@@ -28,7 +28,7 @@ const LogoText = styled.h2`
 const LogoContainer = styled.div`
   position: absolute;
   display: flex;
-  padding: 10px;
+  padding: 15px;
 `;
 
 const StyledLink = styled.a`

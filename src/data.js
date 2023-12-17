@@ -6,6 +6,7 @@ export const popularEvents = [
         date: "August 14, 2023",
         time: "2 PM",
         location: "Cebu",
+        price: "Free",
         link: "#",
     },
     {
@@ -15,6 +16,7 @@ export const popularEvents = [
         date: "December 24, 2023",
         time: "3 AM",
         location: "Manila",
+        price: "Free",
         link: "#",
     },
     {
@@ -24,6 +26,7 @@ export const popularEvents = [
         date: "November 5, 2023",
         time: "5 PM",
         location: "Davao",
+        price: "Free",
         link: "#",
     },
     {
@@ -33,6 +36,7 @@ export const popularEvents = [
         date: "August 14, 2023",
         time: "2 PM",
         location: "Cebu",
+        price: "Free",
         link: "#",
     },
     {
@@ -42,6 +46,7 @@ export const popularEvents = [
         date: "December 24, 2023",
         time: "3 AM",
         location: "Manila",
+        price: "Free",
         link: "#",
     },
     {
@@ -51,6 +56,7 @@ export const popularEvents = [
         date: "November 5, 2023",
         time: "5 PM",
         location: "Davao",
+        price: "Free",
         link: "#",
     },
     {
@@ -60,6 +66,7 @@ export const popularEvents = [
         date: "August 14, 2023",
         time: "2 PM",
         location: "Cebu",
+        price: "Free",
         link: "#",
     },
     {
@@ -69,6 +76,7 @@ export const popularEvents = [
         date: "December 24, 2023",
         time: "3 AM",
         location: "Manila",
+        price: "Free",
         link: "#",
     },
     {
@@ -78,6 +86,7 @@ export const popularEvents = [
         date: "November 5, 2023",
         time: "5 PM",
         location: "Davao",
+        price: "Free",
         link: "#",
     },
     {
@@ -87,6 +96,7 @@ export const popularEvents = [
         date: "August 14, 2023",
         time: "2 PM",
         location: "Cebu",
+        price: "Free",
         link: "#",
     },
     {
@@ -96,6 +106,7 @@ export const popularEvents = [
         date: "December 24, 2023",
         time: "3 AM",
         location: "Manila",
+        price: "Free",
         link: "#",
     },
     {
@@ -105,6 +116,7 @@ export const popularEvents = [
         date: "November 5, 2023",
         time: "5 PM",
         location: "Davao",
+        price: "Free",
         link: "#",
     }
 ]
@@ -117,6 +129,7 @@ export const sample = [
         date: "August 14, 2023",
         time: "2 PM",
         location: "Cebu",
+        price: "Free",
         link: "#",
     },
     {
@@ -126,6 +139,7 @@ export const sample = [
         date: "December 24, 2023",
         time: "3 AM",
         location: "Manila",
+        price: "Free",
         link: "#",
     },
 ]

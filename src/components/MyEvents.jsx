@@ -11,7 +11,6 @@ const Title = styled.h2`
   margin: 10px;
 `
 const EventsContainer = styled.div`
-  padding: 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

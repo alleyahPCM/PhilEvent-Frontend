@@ -1,10 +1,11 @@
-import React from 'react'
+import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
 
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import { Modal, Button } from 'react-bootstrap';
 
 const Title = styled.h2`
   font-weight: bold;
@@ -17,18 +18,29 @@ const localizer = momentLocalizer(moment);
 const events = [
   {
     title: 'Meeting 1',
-    start: new Date(2023, 11, 5),
-    end: new Date(2023, 11, 7),
+    start: new Date(2023, 11, 1),
+    end: new Date(2023, 11, 2),
+    description: 'Details about Meeting 1',
   },
   {
     title: 'Meeting 2',
-    start: new Date(2023, 11, 11),
-    end: new Date(2023, 11, 13),
+    start: new Date(2023, 11, 15),
+    end: new Date(2023, 11, 17),
+    description: 'Details about Meeting 2',
   },
   // Add more events as needed
 ];
 
 const EventCalendar = () => {
+  const [selectedEvent, setSelectedEvent] = useState(null);
+
+  const handleSelectEvent = (event) => {
+    setSelectedEvent(event);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedEvent(null);
+  };
 
   return (
     <Container>
@@ -40,8 +52,8 @@ const EventCalendar = () => {
         startAccessor="start"
         endAccessor="end"
         views={['month']}
-        defaultDate={new Date(2023, 11, 1)} // Set the default date to the start of the month
-        style={{ maxHeight: '100%', width: '100%' }} // Adjust style
+        defaultDate={new Date(2023, 11, 1)}
+        style={{ maxHeight: '100%', width: '100%' }}
         components={{
           month: {
             event: ({ event }) => (
@@ -51,7 +63,23 @@ const EventCalendar = () => {
             ),
           },
         }}
+        onSelectEvent={handleSelectEvent}
       />
+
+      <Modal show={selectedEvent !== null} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>{selectedEvent?.title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>{selectedEvent?.description}</p>
+          {/* Display other event details as needed */}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
     </Container>
   )

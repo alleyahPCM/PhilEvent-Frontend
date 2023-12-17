@@ -27,7 +27,7 @@ const CardButton = styled(Button)`
   border: none;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
 
-  &:hover {
+  &:hover, &:focus {
     background-color: #DA7422;
   }
 
@@ -44,6 +44,14 @@ const StyledBiCalendarPlus = styled(BiCalendarPlus)`
   ${CardButton}:hover & {
     color: white;
   }
+
+  ${CardButton}:focus & {
+    color: white;
+  }
+
+  ${CardButton}:active & {
+    color: white;
+  }
 `;
 
 const StyledAiFillHeart = styled(AiFillHeart)`
@@ -51,6 +59,14 @@ const StyledAiFillHeart = styled(AiFillHeart)`
   color: black;
 
   ${CardButton}:hover & {
+    color: white;
+  }
+
+  ${CardButton}:focus & {
+    color: white;
+  }
+
+  ${CardButton}:active & {
     color: white;
   }
 `;

@@ -83,7 +83,7 @@ const Link = styled.span`
 
 const NavBar = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" style={{ backgroundColor: 'white' }}>
+    <Navbar collapseOnSelect expand="lg" style={{ backgroundColor: 'white', borderBottom: '1px solid #ced4da' }}>
         <Container>
             <Navbar.Brand href="/" style={{paddingTop: 10, display: 'flex'}}>
                 <img src={LogoGreen} alt='logo' style={{width: 40, height: 40}}/>

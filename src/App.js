@@ -10,6 +10,7 @@ import {Routes, Route, useLocation} from "react-router-dom";
 import UserSettings from './pages/UserSettings';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import Event from './pages/Event';
 
 function App() {
   const location = useLocation();
@@ -41,6 +42,7 @@ function App() {
         <Route path="/Calendar" element={<UserCalendar/>}/>
         <Route path="/MyEvents" element={<UserEvents/>}/>
         <Route path="/Settings" element={<UserSettings/>}/>
+        <Route path="/Event" element={<Event/>}/>
       </Routes>
     </div>
   );

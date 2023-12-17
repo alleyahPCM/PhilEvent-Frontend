@@ -2,7 +2,7 @@ import React from 'react';
 import NavBarAlt from '../components/NavBarAlt';
 import Sidebar from '../components/Sidebar';
 import { Grid } from '@mui/material';
-import Calendar from '../components/Calendar';
+import EventCalendar from '../components/EventCalendar';
 
 const UserCalendar = () => {
   return (
@@ -14,7 +14,7 @@ const UserCalendar = () => {
             <Sidebar />
           </Grid>
           <Grid item sm={10}>
-            <Calendar/>
+            <EventCalendar/>
           </Grid>
         </Grid>
       </div>
